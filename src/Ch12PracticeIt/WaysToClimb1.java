@@ -51,14 +51,18 @@ public class WaysToClimb1 {
         if (stairs <= 0) {
             System.out.println(chosen);
         } else {
+            System.out.println("ELSE Chosen before: " + chosen);
             chosen.push(1);                     // choose 1
             waysToClimb(stairs - 1, chosen);    // explore
             chosen.pop();                       // un-choose
+            System.out.println("ELSE Chosen after: " + chosen);
 
             if (stairs > 1) {
+                System.out.println("IF Chosen before: " + chosen);
                 chosen.push(2);                   // choose 2
                 waysToClimb(stairs - 2, chosen);  // explore
                 chosen.pop();                     // un-choose
+                System.out.println("IF Chosen before: " + chosen);
             }
         }
     }
