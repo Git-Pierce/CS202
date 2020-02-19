@@ -6,19 +6,26 @@ import java.util.*;
 public class ListExample {
     public static void main(String[] args) throws FileNotFoundException {
         List<String> words = new LinkedList<>();
-        Iterator<String> itr = words.iterator();
+
         for (int i = 0; i < 10; i++){
             words.add("add"+i);
         }
-//        System.out.println("Iterator has next" + itr.hasNext());
-//        //System.out.println("Iterator next" + itr.next());
-//        System.out.println("Iterator remove" );
-//        if (itr.hasNext()){
-//            System.out.println(words);
-//            itr.next();
-//            itr.remove();
-//            System.out.println(words);
-//        }
+
+        //Iterator MUST be DECLARED AFTER LIST is manipulated,
+        // otherwise concurrent exceptions will occur
+
+        Iterator<String> itr = words.iterator();
+
+        System.out.println("Iterator has next" + itr.hasNext());
+        //System.out.println("Iterator next" + itr.next());
+        System.out.println("Iterator remove" );
+        if (itr.hasNext()){
+            System.out.println(words);
+            String a = itr.next();
+            System.out.println("word" + a);
+            itr.remove();
+
+        }
 
 //        System.out.println(file.exists());
 //        System.out.println(file.isDirectory());
